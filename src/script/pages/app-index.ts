@@ -7,6 +7,9 @@ import { Router } from "@vaadin/router";
 
 import "../components/header";
 
+import "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.63/dist/components/avatar/avatar.js";
+
+
 @customElement("app-index")
 export class AppIndex extends LitElement {
   static get styles() {
@@ -14,6 +17,18 @@ export class AppIndex extends LitElement {
       main {
         height: 96vh;
         padding: 0;
+      }
+
+      sl-avatar {
+        position: fixed;
+
+        right: 20px;
+        top: 0px;
+        --size: 40px;
+
+        /* left: calc(env(titlebar-area-width, 100vw) - 44px);
+        top: env(titlebar-area-y, 0);
+        --size: env(titlebar-area-height, 40px); */
       }
 
       #routerOutlet > * {
@@ -117,6 +132,7 @@ export class AppIndex extends LitElement {
 
         <main>
           <div id="routerOutlet"></div>
+          <sl-avatar image="assets/lindsay.jpg"></sl-avatar>
         </main>
       </div>
     `;
